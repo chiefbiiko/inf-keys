@@ -1,0 +1,30 @@
+{
+  "name": "keystream",
+  "version": "0.0.0",
+  "description": "an infinite keystream",
+  "main": "index.js",
+  "scripts": {
+    "test": "tape test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chiefbiiko/keystream.git"
+  },
+  "keywords": [
+    "cipher",
+    "keystream",
+    "xor"
+  ],
+  "author": "Noah Anabiik Schwarz",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/chiefbiiko/keystream/issues"
+  },
+  "homepage": "https://github.com/chiefbiiko/keystream#readme",
+  "devDependencies": {
+    "tape": "^4.8.0"
+  },
+  "dependencies": {
+    "bitwise-rotation": "^1.0.1"
+  }
+}
