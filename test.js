@@ -1,33 +1,31 @@
 var tape = require('tape')
-var keys = require('./index')
+var seed = require('./index')
 
 function isByte (x) {
   return x && Object.getPrototypeOf(x) === Number.prototype &&
     x >= 0 && x <= 255
 }
 
-tape('never ending keys', function (t) {
-  var next = keys('sesame open')
-  var keyz = []
-  for (var i = 0; i < 100; i++) keyz.push(next())
-  // console.log(keyz)
-  t.true(keyz.every(isByte), 'all bytes')
+tape('gen bytes', function (t) {
+  var next = seed('sesame open')
+  var bytes = []
+  for (var i = 0; i < 100; i++) bytes.push(next())
+  t.true(bytes.every(isByte), 'all bytes')
   t.end()
 })
 
 tape('getting n bytes at once', function (t) {
-  var next = keys('secret')
+  var next = seed(Buffer.from('secret'))
   var bytes = next(1000)
-  // console.log(bytes)
-  t.true(Buffer.isBuffer(bytes), 'getting a byte array of spec length')
+  t.true(Buffer.isBuffer(bytes), 'is buf')
   t.end()
 })
 
-tape('same key same keystream', function (t) {
-  var anext = keys('shared secret')
-  var a = anext(1000)
-  var bnext = keys('shared secret')
-  var b = bnext(1000)
-  t.true(a.equals(b), 'equal keystreams')
+tape('same seed same bytes', function (t) {
+  var anext = seed('shared secret')
+  var a = anext(10000)
+  var bnext = seed('shared secret')
+  var b = bnext(10000)
+  t.true(a.equals(b), 'equal bytes')
   t.end()
 })

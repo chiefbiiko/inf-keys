@@ -1,30 +1,30 @@
 {
-  "name": "keystream",
+  "name": "seed-bytes",
   "version": "0.0.0",
-  "description": "an infinite keystream",
+  "description": "seedable bytes",
   "main": "index.js",
   "scripts": {
     "test": "tape test.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/chiefbiiko/keystream.git"
+    "url": "git+https://github.com/chiefbiiko/seed-bytes.git"
   },
   "keywords": [
     "cipher",
-    "keystream",
+    "seed-bytes",
     "xor"
   ],
   "author": "Noah Anabiik Schwarz",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/chiefbiiko/keystream/issues"
+    "url": "https://github.com/chiefbiiko/seed-bytes/issues"
   },
-  "homepage": "https://github.com/chiefbiiko/keystream#readme",
+  "homepage": "https://github.com/chiefbiiko/seed-bytes#readme",
   "devDependencies": {
     "tape": "^4.8.0"
   },
   "dependencies": {
-    "bitwise-rotation": "^1.0.1"
+    "seedrandom": "^2.4.3"
   }
 }
