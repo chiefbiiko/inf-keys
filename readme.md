@@ -14,25 +14,31 @@ A seedable random byte generator.
 npm install --save seed-bytes
 ```
 
+***
+
 ## Usage
 
 ``` js
 var seed = require('seed-bytes')
 var next = seed('sesame open')
 
-next()  // a single byte
+next() // a single byte
 next(419) // n bytes at once, as a buffer
 ```
+
+***
 
 ## API
 
 ### `var next = seed(init[, algo])`
 
-Create a new byte generator seeded with `init`, using the algorithm indicated by `algo`, which defaults to `alea`. You can use any algorithm supported by [`seedrandom`](https://github.com/davidbau/seedrandom#other-fast-prng-algorithms). `init` can be of any type.
+Create a new random byte generator. `init` can be of any type. Set the algorithm for the internal random number generator with `algo`, defaults to `'alea'`. Check out  [`seedrandom`](https://github.com/davidbau/seedrandom#other-fast-prng-algorithms) for a list of supported algorithms.
 
 ### `next([n])`
 
 Get the next byte or the next `n` bytes in a buffer.
+
+***
 
 ## License
 
