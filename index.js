@@ -1,3 +1,5 @@
+var seedrandom = require('seedrandom')
+
 function many (n, gen) {
   var buf = Buffer.alloc(n)
   for (var i = 0; i < n; i++) buf[i] = gen()
@@ -7,7 +9,7 @@ function many (n, gen) {
 function seed (init, algo) {
   return (function next (rng, n) {
     return n ? many(n, next.bind(null, rng, null)) : Math.floor(rng() * 256)
-  }).bind(null, require('seedrandom')[(algo || 'alea')](init))
+  }).bind(null, seedrandom[(algo || 'alea')](init))
 }
 
 module.exports = seed
