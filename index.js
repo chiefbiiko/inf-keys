@@ -8,7 +8,7 @@ function many (n, gen) {
 
 function seed (init, algo) {
   return (function next (rng, n) {
-    return n ? many(n, next.bind(null, rng, null)) : Math.floor(rng() * 256)
+    return n ? many(n, next.bind(null, rng, null)) : (rng() * 256 | 0)
   }).bind(null, seedrandom[(algo || 'alea')](init))
 }
 
