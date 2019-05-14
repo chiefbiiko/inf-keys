@@ -4,7 +4,7 @@
 
 ***
 
-A seedable random byte generator.
+A seedable random byte generator. The algorithms available are **not cryptographically secure**!
 
 ***
 
@@ -32,7 +32,7 @@ next(419) // n bytes at once, as a buffer
 
 ### `var next = seed(init[, algo])`
 
-Create a new random byte generator. `init` can be of any type. Set the algorithm for the internal random number generator with `algo`, defaults to `'alea'`. Check out  [`seedrandom`](https://github.com/davidbau/seedrandom#other-fast-prng-algorithms) for a list of supported algorithms.
+Create a new random byte generator. `init` can be of any type. Set the algorithm for the internal random number generator with `algo`, defaults to `'alea'`. Check out  [`seedrandom`](https://github.com/davidbau/seedrandom#other-fast-prng-algorithms) for a list of supported algorithms. **None of those are cryptographically secure**.
 
 ### `next([n])`
 
